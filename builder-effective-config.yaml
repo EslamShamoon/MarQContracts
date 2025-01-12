@@ -1,0 +1,28 @@
+directories:
+  output: dist_electron
+  buildResources: build
+appId: com.example.contractsjs
+files:
+  - filter:
+      - frontend/**/*
+      - backend/**/*
+      - electron-main.js
+      - preload.js
+extraResources:
+  - from: google-service-account.json
+    to: google-service-account.json
+  - from: wondermarq-resale.docx
+    to: wondermarq-resale.docx
+  - from: ThirdPartyAnnex.docx
+    to: ThirdPartyAnnex.docx
+  - from: WonderMarQContract.docx
+    to: WonderMarQContract.docx
+extraMetadata:
+  main: electron-main.js
+win:
+  target: nsis
+mac:
+  target: dmg
+linux:
+  target: AppImage
+electronVersion: 33.3.1
